@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.magic.music.mapper.RankMapper">
+
+    <select id="getScoreSum" resultType="java.lang.Integer">
+        select COALESCE(sum(score),0) as score
+        from ranker
+        where song_list_id = #{id}
+    </select>
+</mapper>
